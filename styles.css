@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #2C2C2C;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .pantalla {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    text-align: center;
+  }
+  
+  .pantalla.activa {
+    display: flex;
+  }
+  
+  button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #3A5A40;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #588157;
+  }
+  
+  .zona-juego {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .objeto {
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.2s;
+  }
+  
+  .objeto:hover {
+    transform: scale(1.2);
+  }
+  
+  .barra-tiempo {
+    width: 80%;
+    height: 16px;
+    background-color: #555;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .progreso {
+    width: 70%; /* Simulación */
+    height: 100%;
+    background-color: #84A98C;
+  }
+  
+  .acciones {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .idioma {
+    margin-top: 10px;
+    color: #AAA;
+  }
+  
+  select {
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+  }
+
+  .correcto {
+    background-color: #588157;
+    border-radius: 10px;
+    transition: background 0.3s;
+  }
+  
+  .incorrecto {
+    background-color: #B80C09;
+    border-radius: 10px;
+    transition: background 0.3s;
+  }
+  
