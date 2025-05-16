@@ -1,82 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atento - Videojuego Educativo</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeuroPlay - Videojuego Educativo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Botón de lenguaje arriba a la derecha -->
+  <div style="position: absolute; top: 10px; right: 10px;">
+    <button id="btn-lang">🌐 Español</button>
+  </div>
+
   <!-- Pantalla de Inicio -->
   <section id="pantalla-inicio" class="pantalla activa">
-    <h1>🎮 Atento - Focus Game</h1>
-    <button onclick="mostrarPantalla('juego')">Iniciar Juego</button>
-    <button onclick="mostrarPantalla('puntajes')">Ver Puntajes</button>
-    <button onclick="mostrarPantalla('opciones')">Opciones</button>
-    <div class="idioma">
-      <label for="lang">Idioma:</label>
-      <select id="lang">
-        <option>Español</option>
-        <option>English</option>
-      </select>
+    <h1>🎮 NeuroPlay</h1>
+    <div class="cards-juegos">
+      <div class="card-juego" id="card-juego1">
+        <div style="font-size: 2.5rem;">🟢</div>
+        <div>Juego de Atención</div>
+      </div>
+      <div class="card-juego" id="card-juego2">🧠 Juego de Memoria</div>
+      <div class="card-juego" id="card-juego3">🚧 Juego 3 (próximamente)</div>
+      <div class="card-juego" id="card-juego4">🚧 Juego 4 (próximamente)</div>
     </div>
   </section>
 
-  <!-- Pantalla de Juego -->
-  <section id="pantalla-juego" class="pantalla">
-    <h2>Nivel 1</h2>
-    <p>Encuentra el círculo verde</p>
-    <div class="zona-juego">
-      <div class="objeto">🔴</div>
-      <div class="objeto">🟢</div>
-      <div class="objeto">🔵</div>
-      <div class="objeto">🟠</div>
+  <!-- Juego 1: Círculo Verde -->
+  <section id="pantalla-juego1" class="pantalla">
+    <h2 id="nivel-juego1">Nivel 1</h2>
+    <p id="label-score">Puntaje: 0</p>
+    <p id="instruccion-juego1">Encuentra el círculo verde</p>
+    <div class="barra-tiempo">
+      <div class="progreso" id="barra-progreso"></div>
     </div>
-    <div class="barra-tiempo"><div class="progreso"></div></div>
+    <div id="zona-juego1" class="zona-juego"></div>
+    <div id="zona-juego12" class=""></div>
     <div class="acciones">
-      <button>💡 Pista</button>
-      <button>🔁 Reiniciar</button>
-      <button onclick="mostrarPantalla('inicio')">🏠 Menú</button>
+      <button onclick="location.reload()">🔁 Reiniciar</button>
+      <button onclick="window.location.reload()">🏠 Menú</button>
     </div>
   </section>
 
-  <!-- Pantalla de Resultados -->
-  <section id="pantalla-resultados" class="pantalla">
-    <h2>🎉 ¡Bien hecho!</h2>
-    <p>Has completado el nivel</p>
-    <p>Puntaje total: 120</p>
-    <button>➡️ Siguiente Nivel</button>
-    <button onclick="mostrarPantalla('juego')">🔁 Repetir</button>
-    <button onclick="mostrarPantalla('inicio')">🏠 Menú</button>
-  </section>
-
-  <!-- Pantalla de Juego -->
-<section id="pantalla-juego" class="pantalla">
-    <h2>Nivel 1</h2>
-    <p id="puntaje">Puntaje: 0</p>
-    <p>Encuentra el círculo verde</p>
-    <div class="zona-juego"></div>
-    <div class="barra-tiempo"><div class="progreso"></div></div>
+  <!-- Juego 2: Secuencia Visual -->
+  <section id="pantalla-juego2" class="pantalla">
+    <h2>🧠 Memoria Visual</h2>
+    <div id="zona-juego2" class="zona-juego"></div>
+    <div id="zona-juego22"></div>
     <div class="acciones">
-      <button onclick="actualizarZonaJuego()">🔁 Reiniciar</button>
-      <button onclick="mostrarPantalla('inicio')">🏠 Menú</button>
+      <button onclick="location.reload()">🔁 Reiniciar</button>
+      <button onclick="window.location.reload()">🏠 Menú</button>
     </div>
   </section>
-<!-- Pantalla de Resultados -->
-<section id="pantalla-resultados" class="pantalla">
-    <h2>🎉 ¡Bien hecho!</h2>
-    <p>Tu puntaje final es...</p>
-    <button onclick="mostrarPantalla('juego')">🔁 Jugar de nuevo</button>
-    <button onclick="mostrarPantalla('inicio')">🏠 Menú</button>
-  </section>
-    
 
-  <script>
-    function mostrarPantalla(id) {
-      document.querySelectorAll('.pantalla').forEach(p => p.classList.remove('activa'));
-      document.getElementById('pantalla-' + id).classList.add('activa');
-    }
-  </script>
-  <script src="main.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>

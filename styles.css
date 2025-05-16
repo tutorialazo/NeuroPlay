@@ -5,13 +5,13 @@
   }
   
   body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #2C2C2C;
-    color: #FFFFFF;
+    background: linear-gradient(to bottom, #f0f3f548, #e4ecf10a);
+    color: #2C3E50;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: 'Comic Neue', cursive;
   }
   
   .pantalla {
@@ -102,4 +102,48 @@
     border-radius: 10px;
     transition: background 0.3s;
   }
-  
+  .cards-juegos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 20px;
+}
+
+.card-juego {
+  background-color: #A2D5AB;
+  color: #2C3E50;
+  padding: 10px;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background-color 0.3s;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+}
+
+.card-juego:hover {
+  transform: scale(1.05);
+  background-color: #a2d5ab;
+}
+.correcto {
+  background-color: #A2D5AB;
+  border-radius: 12px;
+  transition: background 0.3s;
+}
+
+.incorrecto {
+  background-color: #F7B6B6;
+  border-radius: 12px;
+  transition: background 0.3s;
+}
+
+.objeto.seleccionado {
+  pointer-events: none; /* evita que lo cliquen de nuevo */
+  opacity: 0.6;
+}
